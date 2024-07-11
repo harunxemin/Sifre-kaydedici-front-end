@@ -1,0 +1,44 @@
+<p-confirmDialog key="baTopConfirm" header="Uyarı" icon="pi pi-exclamation-triangle" />
+
+<p-overlayPanel #op>
+  <div class="grid" style="width: 250px">
+    <div class="col-12 text-center" style="background-color: rgba(0, 0, 0, .8)">
+      <br>
+      <img [src]="currentUser.kullaniciResimURL" style="width: 100px; border-radius: 20%" alt="Kullanıcı Resim">
+      <p-divider />
+      <div class="text-white">{{ currentUser.kullaniciAdiSoyadi }}</div>
+      <br>
+      <div class="text-white">{{ currentUser.ajansKodu }}</div>
+      <br>
+    </div>
+
+    <div class="col-12 text-right p-2">
+      <p-button icon="fas fa-sign-out-alt" label="{{'Menuler.cikis' | translate}}" (onClick)="signOut()" />
+    </div>
+  </div>
+</p-overlayPanel>
+
+<div class="page-top grid grid-nogutter" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+  [ngClass]="{scrolled: isScrolled}">
+  <div class="col-fixed" style="width: 40px">
+    <a href class="collapse-menu-link fas fa-bars" (click)="toggleMenu()"> </a>
+  </div>
+  <div class="col vertical-align-bottom inline">
+    <a routerLink="/pages/ozet" class="al-logo">
+      <div class="grid grid-nogutter">
+        <img src="/assets/icon/Logo_{{seciliTema}}.svg" alt="Logo" style="width: 42px; height: 48px" class="col-fixed">
+        <img src="/assets/icon/Logo_Yazi.svg" class="hidden md:inline-flex col-fixed"
+          style="width: 72px; height: 48px; padding-left: 6px" alt="MedPlanPortal">
+        <div class="col-fixed" style="font-size: 12px; margin-top: 30px; padding-left: 6px"> {{surum}}</div>
+      </div>
+    </a>
+  </div>
+  <div class="user-profile col-fixed" style="width: 220px">
+    <div class="al-user-profile" (click)="op.toggle($event)">
+      <a class="profile-toggle-link" id="user-profile">
+        <img [src]="currentUser.kullaniciResimURL" alt="Kullanıcı Resim">
+      </a>
+    </div>
+
+  </div>
+</div>

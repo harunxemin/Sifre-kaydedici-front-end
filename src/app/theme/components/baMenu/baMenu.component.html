@@ -1,0 +1,16 @@
+<div class="layout-menu-search p-fluid" style="padding: 1.5em .5em 0 .5em">
+  <p-autoComplete #autoCompleteObject [(ngModel)]="searchText" [suggestions]="filteredRoutes" placeholder="Ara"
+    inputId="aramaKutusu" (completeMethod)="filterRoutes($event)" (onSelect)="selectRoute($event)"
+    (onFocus)="aramaFocused()" />
+  <i class="pi pi-search p-1" style="color: red" (click)="aramaFocus()" id="buyutec"></i>
+</div>
+
+<ul id="al-sidebar-list" class="al-sidebar-list" baSlimScroll [baSlimScrollOptions]="{height: menuHeight()}"
+  (mouseleave)="hoverElemTop=outOfArea">
+  @for (item of menuItems; track item) {
+  <ba-menu-item [menuItem]="item" (itemHover)="hoverItem($event)" (toggleSubMenu)="toggleSubMenu($event)" />
+  }
+</ul>
+<div class="sidebar-hover-elem" [style.top.px]="hoverElemTop" [style.height.px]="hoverElemHeight"
+  [ngClass]="{'show-hover-elem': showHoverElem }">
+</div>

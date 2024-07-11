@@ -1,0 +1,71 @@
+<p-confirmDialog key="sifreDegistirConfirm" header="Bilgi" acceptLabel="Tamam" rejectLabel="Vazgeç"
+  icon="pi pi-exclamation-triangle" />
+
+<div class="login-body">
+  <div class="card login-panel login-image" [style.background-image]="'url('+bgLoginImageVariable+')'">
+    <div class="login-panel-content p-fluid">
+      <login-ust />
+
+      <form [formGroup]="form">
+        <div class="grid p-3">
+          <div class="col-12 text-left">
+            <label for="inputSifre" class="login-label">Şifre</label>
+            <div class="login-input">
+              <p-password [(formControl)]="sifre" id="inputSifre" toggleMask (keypress)="dismissAlert()"
+                placeholder="Şifre" />
+            </div>
+          </div>
+          <div class="col-12 text-left">
+            <label for="inputSifreTekrar" class="login-label">Şifre Tekrar</label>
+            <div class="login-input">
+              <p-password [(formControl)]="sifreTekrar" id="inputSifreTekrar" toggleMask (keypress)="dismissAlert()"
+                placeholder="Tekrar" />
+            </div>
+          </div>
+
+          <div class="col-12 button-pane">
+            <p-button [disabled]="!form.valid" label="Değiştir" icon="fas fa-sign-in-alt" severity="info"
+              (onClick)="sifreDegistirCall()" />
+          </div>
+
+          <div class="col-12 button-pane text-left">
+            <ul>
+              @if (secenekler.minimumUzunluk !== 0) {
+              <li>
+                Şifreniz en az {{secenekler.minimumUzunluk}} karakter uzunluğunda olmalıdır
+              </li>
+              }
+
+              @if (secenekler.harfIcersin) {
+              <li>
+                Şifreniz en az bir harf içermelidir
+              </li>
+              }
+
+              @if (secenekler.rakamIcersin) {
+              <li>
+                Şifreniz en az bir rakam içermelidir
+              </li>
+              }
+
+              @if (secenekler.buyukKucukHarfIcersin) {
+              <li>
+                Şifreniz hem büyük hem küçük harf içermelidir
+              </li>
+              }
+
+              @if (secenekler.sifreCakismamaLimiti !== 0) {
+              <li>
+                Şifreniz {{secenekler.sifreCakismamaLimiti}} şifreniz ile aynı olmamalıdır
+              </li>
+              }
+
+            </ul>
+          </div>
+
+        </div>
+      </form>
+      <p-messages [(value)]="error" closable="false" />
+    </div>
+  </div>
+</div>

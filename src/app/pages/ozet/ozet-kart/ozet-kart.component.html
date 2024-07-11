@@ -1,0 +1,40 @@
+<a [routerLink]="ozetKart().kartLink">
+  <sol-kucuk-kart [baslik]="ozetKart().baslik" [baslikRenk]="ozetKart().renk">
+    <table class="w-full">
+      <tbody>
+        <tr class="text-center font-bold" style="font-size: 1.25em">
+          <td colspan="2" class="pt-3" [style.color]="ozetKart().renk">
+            {{ozetKart().pay}} / {{ozetKart().payda}} {{ ozetKart().birim}}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="grid justify-content-center pt-3">
+              <ozet-knob [pay]="ozetKart().pay" [payda]="ozetKart().payda" [renk]="ozetKart().renk" />
+            </div>
+          </td>
+        </tr>
+        <tr [style.color]="ozetKart().renk">
+          <td class="description-aciklama-ilk">
+            {{ozetKart().sonucBaslik}}
+          </td>
+
+          <td class="description-aciklama-iki">
+            {{ozetKart().sonucDeger}}
+          </td>
+        </tr>
+
+        @if (ozetKart().sonucBaslik2 !== '') {
+        <tr [style.color]="ozetKart().renk2">
+          <td class="description-aciklama-ilk">
+            {{ozetKart().sonucBaslik2}}
+          </td>
+          <td class="description-aciklama-iki">
+            {{ozetKart().sonucDeger2}}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </sol-kucuk-kart>
+</a>

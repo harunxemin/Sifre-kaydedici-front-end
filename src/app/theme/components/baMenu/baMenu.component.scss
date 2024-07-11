@@ -1,0 +1,23 @@
+@import '../../sass/conf/conf.scss';
+
+span.layout-menu-search {
+  padding: 1.5em;
+  overflow: visible;
+  position: relative;
+}
+
+.layout-menu-search {
+  i {
+    position: absolute;
+    left: .6em;
+    top: 1.55em;
+    color: rgba(0, 0, 0, .75);
+  }
+
+}
+
+:host ::ng-deep {
+  .p-autocomplete-input {
+    text-indent: 1.7em;
+  }
+}

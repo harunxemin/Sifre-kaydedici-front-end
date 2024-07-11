@@ -1,0 +1,53 @@
+@if (!menuItem().hidden) {
+<li [title]="menuItem().title"
+  [class]="{'al-sidebar-list-item':!child(), 'ba-sidebar-sublist-item':child(), 'selected': menuItem().selected && !menuItem().expanded, 'with-sub-menu': menuItem().children, 'ba-sidebar-item-expanded': menuItem().expanded}">
+
+  @if (!menuItem().children && !menuItem().url) {
+  <a (mouseenter)="onHoverItem($event)" [routerLink]="menuItem().route.paths" class="al-sidebar-list-link">
+    @if (menuItem().iconURL) {
+    <img [src]="getMenuIconURL + menuItem().iconURL" class="mr-2 h-1rem w-1rem" [alt]="menuItem().iconURL">
+    }
+    @if (menuItem().icon) {
+    <i [class]="menuItem().icon" style="margin-right: 6px"></i>
+    }
+    <span>{{ menuItem().title }}</span>
+  </a>
+  }
+
+  @if (!menuItem().children && menuItem().url) {
+  <a (mouseenter)="onHoverItem($event)" [href]="menuItem().url" [target]="menuItem().target"
+    class="al-sidebar-list-link">
+    @if (menuItem().iconURL) {
+    <img [src]="getMenuIconURL + menuItem().iconURL" class="mr-2 h-1rem w-1rem" [alt]="menuItem().iconURL">
+    }
+    @if (menuItem().icon) {
+    <i [class]="menuItem().icon"></i>
+    }
+    <span>{{ menuItem().title }}</span>
+  </a>
+  }
+
+  @if (menuItem().children) {
+  <a (mouseenter)="onHoverItem($event)" href class="al-sidebar-list-link" (click)="onToggleSubMenu($event, menuItem)">
+    @if (menuItem().iconURL) {
+    <img [src]="getMenuIconURL + menuItem().iconURL" class="mr-2 h-1rem w-1rem" [alt]="menuItem().iconURL">
+    }
+    @if (menuItem().icon) {
+    <i [class]="menuItem().icon"></i>
+    }
+    <span>{{ menuItem().title }}</span>
+    <b class="fas fa-angle-down" [ngClass]="{'fa-angle-up': menuItem().expanded}"></b>
+  </a>
+  }
+
+  @if (menuItem().children) {
+  <ul class="al-sidebar-sublist" [ngClass]="{'slide-right': menuItem().slideRight}">
+    @for (subItem of menuItem().children; track subItem) {
+    <ba-menu-item [menuItem]="subItem" child (itemHover)="onHoverItem($event)"
+      (toggleSubMenu)="onToggleSubMenu($event, subItem)" />
+    }
+  </ul>
+  }
+
+</li>
+}

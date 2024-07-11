@@ -1,0 +1,72 @@
+<p-confirmDialog key="ozetConfirm" header="Uyarı" icon="pi pi-exclamation-triangle" />
+
+@if (favorilerim.favoriler.length > 0) {
+<dikey-baslikli-panel baslik="Favorilerim" [renk]="renk">
+  <div class="grid grid-nogutter w-full">
+    <div class="col">
+      <div class="grid grid-nogutter">
+        @for (favori of favorilerim.favoriler; track favori) {
+
+        @if (favoriDuzenle) {
+        <div class="col-fixed drop-column w-11rem" [class.shake]="favoriDuzenle" pDraggable="kartlar"
+          pDroppable="kartlar" (onDragStart)="favoriDragStart(favori)" (onDragEnd)="favoriDragEnd()"
+          (onDrop)="favoriDrop(favori)" dragEffect="move">
+          <alt-kucuk-kart [baslikRenk]="renk" [baslik]="favori.ad" baslikYukseklik="3" genislik="12em" yukseklik="10">
+            <div class="grid grid-nogutter h-6rem" [style.background-color]="renk" [style.background]="renkSanitized"
+              [style.boxShadow]="shadowSanitized">
+              <div class="col-12 flex justify-content-center align-items-center">
+                <img [src]="getMenuIconURL + favori.icon" width="64px" height="64px" [alt]="favori.icon">
+              </div>
+            </div>
+          </alt-kucuk-kart>
+          <div class="col-fixed fas fa-minus-circle w-2rem fa-2x fixed" style="z-index: 1000; left: -1rem; top: -1rem"
+            (click)="favoriSil(favori)">
+          </div>
+          <div class="fixed w-1rem left-0" style="z-index: 100; top: .1rem;  background-color: gray; height: .5rem">
+          </div>
+        </div>
+        } @else {
+        <div class="col-fixed">
+          <a [routerLink]="'/' + favori.href">
+            <alt-kucuk-kart [baslikRenk]="renk" [baslik]="favori.ad" baslikYukseklik="3" genislik="12em" yukseklik="10">
+              <div class="grid grid-nogutter h-6rem" [style.background-color]="renk" [style.background]="renkSanitized"
+                [style.boxShadow]="shadowSanitized">
+                <div class="col-12 flex justify-content-center align-items-center">
+                  <div class="w-full flex align-items-center justify-content-center jump pb-4 h-8rem">
+                    <img [src]="getMenuIconURL + favori.icon" width="64" height="64"
+                      style="margin-left: 36px; margin-right: 36px" [alt]="favori.icon">
+                  </div>
+                </div>
+              </div>
+            </alt-kucuk-kart>
+          </a>
+        </div>
+        }
+
+        }
+      </div>
+
+    </div>
+
+    <div class="col-fixed w-3rem mr-1">
+      <div class="grid grid-nogutter mt-2">
+        <div class="col-12 flex justify-content-center">
+          <p-inputSwitch [(ngModel)]="favoriDuzenle" pTooltip="Favorileri Düzenle" tooltipPosition="left" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</dikey-baslikli-panel>
+}
+
+@if (ozetKartlar.length > 0) {
+<dikey-baslikli-panel baslik="Özet" [renk]="renk">
+  @for (ozetKart of ozetKartlar; track ozetKart) {
+  <div>
+    <ozet-kart [ozetKart]="ozetKart" />
+  </div>
+  }
+</dikey-baslikli-panel>
+}

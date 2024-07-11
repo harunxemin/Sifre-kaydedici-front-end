@@ -1,0 +1,29 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib/",
+  "eslint.enable": true,
+  "files.eol": "\r\n",
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "words",
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+
+    {
+      "type": "importMember",
+      "regex": "^$",
+      "orderLevel": 5,
+      "disableSort": true
+    },
+    {
+      "regex": "^[^.@]",
+      "orderLevel": 10
+    },
+    {
+      "regex": "^[@]",
+      "orderLevel": 1
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 30
+    }
+  ],
+  "angular.enable-strict-mode-prompt": false
+}

@@ -1,0 +1,43 @@
+<div class="login-body">
+  <div class="card login-panel login-image" [style.background-image]="'url('+bgLoginImageVariable+')'">
+    <div class="login-panel-content">
+      <login-ust />
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid p-3 p-fluid">
+          <div class="col-12 text-left">
+            <label for="inputEmail" class="login-label">e-Posta Adresi</label>
+            <div class="login-input">
+              <input #inputEmail pInputText type="text" [formControl]="kullaniciKodu" id="inputEmail"
+                placeholder="e-Posta Adresi" inputmode="email" (keypress)="dismissAlert()">
+            </div>
+          </div>
+
+          <div class="col-12 text-left">
+            <label for="inputSifre" class="login-label">Şifre</label>
+            <div class="login-input">
+              <p-password [(formControl)]="sifre" feedback="false" toggleMask placeholder="Şifre"
+                (keypress)="dismissAlert()" />
+            </div>
+          </div>
+
+          <div class="col-6 button-pane">
+            <p-button severity="info" [disabled]="!form.valid" type="submit" label="Giriş" icon="fas fa-sign-in-alt"
+              class="w-full" />
+          </div>
+
+          <div class="col-6 link-pane">
+            <a [routerLink]="['/login', 'sifremi-unuttum']">Şifremi Unuttum</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    @if (error.length > 0) {
+    <div class="login-panel-content mt-3" style="background-color: transparent">
+      <p-messages [(value)]="error" closable="false" />
+    </div>
+    }
+
+  </div>
+</div>

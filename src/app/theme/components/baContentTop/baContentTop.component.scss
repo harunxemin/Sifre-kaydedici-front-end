@@ -1,0 +1,18 @@
+@import '../../sass/conf/conf.scss';
+
+.content-top {
+  padding-top: 13px;
+  padding-bottom: 27px;
+}
+
+h1.al-title {
+  font-weight: 700;
+  color: $default-text;
+  float: left;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  opacity: .9;
+}

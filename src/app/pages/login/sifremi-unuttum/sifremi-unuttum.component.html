@@ -1,0 +1,36 @@
+<div class="login-body">
+  <div class="card login-panel login-image" [style.background-image]="'url('+bgLoginImageVariable+')'">
+    <div class="login-panel-content p-fluid">
+      <login-ust />
+
+      <div class="grid">
+        <div class="col-12"> Şifremi Unuttum </div>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid p-3">
+          @if (girisDugmeGorunur) {
+          <div class="col-12 button-pane">
+            <a [routerLink]="['/login', 'login']">
+              <p-button severity="warning" label="Giriş Yap" icon="fas fa-sign-in-alt" />
+            </a>
+          </div>
+          } @else {
+          <div class="col-12 text-left">
+            <label for="inputEmail" class="login-label">e-Posta Adresi</label>
+            <div class="login-input">
+              <input pInputText type="text" [formControl]="kullaniciKodu" id="inputEmail" placeholder="e-Posta Adresi"
+                inputmode="email" (keypress)="dismissAlert()">
+            </div>
+          </div>
+          <div class="col-12 button-pane">
+            <p-button severity="info" [disabled]="!form.valid" type="submit" label="Şifre Sıfırla" />
+          </div>
+          }
+
+        </div>
+      </form>
+      <p-messages [(value)]="error" closable="false" />
+    </div>
+  </div>
+</div>

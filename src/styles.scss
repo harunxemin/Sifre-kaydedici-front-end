@@ -1,0 +1,764 @@
+/* You can add global styles to this file, and also import other style files */
+
+@charset "UTF-8";
+
+@import "app/theme/sass/conf/conf.scss";
+@import "app/theme/sass/layout.scss";
+@import "app/theme/sass/typography.scss";
+
+@layer primeng {
+  .p-toast {
+    z-index: 9999 !important;
+  }
+
+  .p-button {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  body .p-panel .p-panel-header {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  body .p-panel .p-panel-header .p-panel-header-icon {
+    color: white;
+  }
+
+  .p-panel-expanded .p-toggleable-content:not(.ng-animating) {
+    overflow: visible;
+  }
+
+  .p-panel .p-toggleable-content {
+    overflow: hidden;
+  }
+
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-steps:not(:disabled) {
+    cursor: pointer;
+  }
+
+  .p-input {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-steps .p-steps-item.p-highlight .p-steps-number {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-button:enabled:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    opacity: .5;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    opacity: .5;
+  }
+
+  .p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(2n).p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-datatable .p-datatable-tbody>tr.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-enabled) {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    opacity: .5;
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-datepicker table td>span.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-fileupload-choose:not(.p-disabled):hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    opacity: .5;
+  }
+
+  .p-selectbutton .p-button.p-highlight {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+  }
+
+  .p-selectbutton .p-button.p-highlight:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    opacity: .5;
+  }
+
+  .p-datatable .p-datatable-scrollable-header {
+    font-size: 12px;
+  }
+
+  .p-component {
+    font-size: 13px;
+  }
+
+  .p-dropdown-label {
+    font-size: 13px;
+  }
+
+  .p-toolbar {
+    padding-bottom: .4rem;
+    padding-top: .457rem;
+  }
+
+  .p-toolbar-group-start,
+  .p-toolbar-group-end {
+    flex-wrap: wrap;
+  }
+
+  .p-panel .p-panel-header {
+    padding-bottom: .457rem;
+    padding-top: .457rem;
+  }
+
+  .p-message {
+    margin: 0;
+  }
+
+  .p-message .p-message-wrapper {
+    padding: .6em;
+  }
+
+  .p-dialog-content {
+    white-space: pre-line;
+  }
+
+  .p-accordion-header-link {
+    background-color: var(--primary) !important;
+    color: white !important;
+    box-shadow: none !important;
+  }
+
+  #mecraTurleri .p-selectbutton .p-button:first-child {
+    border-radius: 10px;
+    margin: 4px;
+  }
+
+  #mecraTurleri .p-selectbutton .p-button:last-child {
+    border-radius: 10px;
+    margin: 4px;
+  }
+
+  #mecraTurleri .p-selectbutton .p-button {
+    border-radius: 10px;
+    margin: 4px;
+  }
+
+  // #mecraTurleri .p-buttonset:not(.p-splitbutton) .p-button {
+  //   border-radius: 10px;
+  //   margin: 4px;
+  //   background: var(--primary);
+  //   border-color: var(--primary);
+  //   color: #ffffff;
+  // }
+
+  :host ::ng-deep .aramaListeStyle .p-paginator {
+    .p-dropdown {
+      float: left;
+    }
+  }
+
+  :host ::ng-deep .p-datatable .p-paginator-bottom {
+    border: 0 none;
+    padding: 1em;
+  }
+
+  .p-field {
+    margin-bottom: .5em !important;
+  }
+}
+
+.tablo-ilk-sutun-baslik {
+  color: #1c94c4;
+  width: 185px;
+}
+
+.detay {
+  width: 100%;
+  border: var(--primary);
+  border-width: 2px;
+  border-style: solid;
+  padding: 6px;
+}
+
+.detay-baslik {
+  width: 100%;
+  background-color: var(--primary);
+}
+
+.detay-baslik-yazi {
+  // font-size: 1.5em;
+  margin-left: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.detay-baslik-sag-bilgi {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.detay-baslik-icon {
+  color: white;
+}
+
+.description-aciklama-ilk {
+  width: 150px;
+  padding-left: 1em;
+}
+
+.description-aciklama-iki {
+  text-align: right;
+  padding-right: 1em;
+}
+
+.cift-satir-label {
+  white-space: pre-wrap;
+  line-height: 1.5 !important;
+}
+
+.separator {
+  border-right: 2px solid #cfcdcd;
+}
+
+.separator-sol {
+  border-left: 2px solid #cfcdcd;
+}
+
+.separator-sag {
+  border-right: 2px solid #cfcdcd;
+}
+
+#dikcizgi {
+  border-right: 2px solid #cfcdcd;
+  padding-right: 1em;
+}
+
+#dikcizgisola {
+  border-left: 2px solid #cfcdcd;
+  padding-left: 1.5em;
+}
+
+.hata {
+  background: url("assets/images/Unlem.png") no-repeat;
+  background-size: cover;
+}
+
+.excel {
+  background: url("assets/images/Excel_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.excel:hover {
+  background: url("assets/images/Excel_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.excel:active {
+  background: url("assets/images/Excel_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.text {
+  background: url("assets/images/Text_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.text:hover {
+  background: url("assets/images/Text_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.text:active {
+  background: url("assets/images/Text_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.pdf {
+  background: url("assets/images/PDF_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.pdf:hover {
+  background: url("assets/images/PDF_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.pdf:active {
+  background: url("assets/images/PDF_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.information {
+  background: url("assets/images/Info_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.information:hover {
+  background: url("assets/images/Info_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.information:active {
+  background: url("assets/images/Info_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.download {
+  background: url("assets/images/Download_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.download:hover {
+  background: url("assets/images/Download_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.download:active {
+  background: url("assets/images/Download_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.outlook {
+  background: url("assets/images/Outlook_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.outlook:hover {
+  background: url("assets/images/Outlook_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.outlook:active {
+  background: url("assets/images/Outlook_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+.ePosta {
+  background: url("assets/images/ePosta_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.ePosta:hover {
+  background: url("assets/images/ePosta_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.ePosta:active {
+  background: url("assets/images/ePosta_Pressed.svg") no-repeat;
+  background-size: cover;
+}
+
+/* !important is needed sometimes */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px !important;
+  background: var(--primary) !important;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: var(--primary) !important;
+}
+
+.glowbox {
+  background: white;
+  margin: 10px 0 0 10px;
+  -moz-box-shadow: 0 0 5px 5px #ddd;
+  -webkit-box-shadow: 0 0 5px 5px#ddd;
+  box-shadow: 0 0 5px 5px #ddd;
+}
+
+.filtre {
+  padding-right: .25rem;
+}
+
+.filtre-etiket {
+  color: var(--primary);
+  padding-bottom: .25rem;
+  padding-top: .25rem;
+}
+
+.filtre-baslik {
+  color: var(--primary);
+  font-weight: bold;
+  padding-bottom: .25rem;
+  text-decoration-line: underline;
+}
+
+.etiket {
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  height: 100%
+}
+
+.bilgi-bandi {
+  background: #FFF2E2;
+}
+
+.font-kirmizi {
+  color: red;
+}
+
+.koyu-filtre-etiket {
+  color: #5e5e5e;
+  padding-bottom: 2px;
+  font-size: 16px;
+}
+
+.filtre-sag-marginli {
+  padding-left: 1em;
+}
+
+label {
+  //Bootstrap bozuyor. Düzeltmek için. Bootstrap kaldırılınca ngx-bootstrap çalışmadı
+  margin-bottom: 0 !important;
+}
+
+.input-kucuk {
+  // height: 20px;
+  width: 15em;
+}
+
+.responsive-width-full-buyuk {
+  min-width: 15em;
+  width: 100%;
+}
+
+.responsive-width-full-kucuk {
+  min-width: 12em;
+  width: 100%;
+}
+
+.responsive-width-full-kucuk-semi {
+  min-width: 6em;
+  width: 100%;
+}
+
+.responsive-width-kucuk-dropdown {
+  @media (max-width: 456px) {
+    width: 100%;
+    min-width: 160px;
+  }
+
+  @media (min-width: 457px) {
+    max-width: 195px;
+    width: 195px;
+  }
+}
+
+.responsive-width-buyuk-dropdown {
+  @media (max-width: 456px) {
+    width: 100%;
+    min-width: 160px;
+  }
+
+  @media (min-width: 457px) {
+    max-width: 235px;
+    width: 235px;
+  }
+}
+
+.responsive-width-kucuk {
+  @media (max-width: 445px) {
+    min-width: 15em;
+    width: 100%;
+  }
+
+  @media (min-width: 445px) {
+    min-width: 15em;
+    width: 15em;
+  }
+}
+
+.nesne-kucuk {
+  width: 15em;
+}
+
+legend {
+  display: inherit !important;
+  width: inherit !important;
+  padding: inherit !important;
+  margin-bottom: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  border: inherit !important;
+  border-bottom: inherit !important;
+}
+
+$i: 50;
+
+@while $i < 1000 {
+  .width-#{$i} {
+    width: #{$i}px !important;
+    min-width: #{$i}px !important;
+    max-width: #{$i}px !important;
+  }
+
+  $i: $i+5;
+}
+
+$i: 5;
+
+@while $i < 100 {
+  .width-#{$i}em {
+    width: #{$i}em !important;
+    min-width: #{$i}em !important;
+    max-width: #{$i}em !important;
+  }
+
+  $i: $i+1;
+}
+
+.width-full {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+.yardim-ana-baslik {
+  font-family: var(--font-family);
+  color: var(--primary);
+  // font-weight: bold;
+  letter-spacing: .025rem;
+}
+
+.yardim-konu-baslik {
+  font-family: var(--font-family);
+  color: #3c3c3b;
+  font-weight: bold;
+  // letter-spacing: .025rem;
+}
+
+.yardim-icerik {
+  font-family: var(--font-family);
+  color: #575756;
+  // font-weight: 400;
+  // font-size: .9975rem;
+  line-height: 1.5rem;
+  // letter-spacing: .025rem;
+}
+
+.yardim-not {
+  font-family: var(--font-family);
+  background: white;
+  padding: 1em;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: .35em;
+  box-shadow: inset 0 0 .35em .15em rgba(0, 0, 0, .2);
+}
+
+.yardim-tablo .p-datatable-thead>tr>th {
+  color: var(--primary);
+}
+
+.yardim-kavram {
+  color: #f1830a;
+  font-weight: bold;
+}
+
+.yardim-ipucu {
+  color: var(--primary);
+}
+
+.yardim-menu {
+  color: #007ad9;
+  font-weight: bold;
+}
+
+.yardim-yuvarlak-resim {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #c4c4c4;
+}
+
+.yardim-yuvarlak-resim img {
+  width: 100%;
+  height: auto;
+}
+
+.yardim-anasayfa-baslik {
+  font-size: 18pt;
+  color: #3c3c3b;
+}
+
+.yardim-anasayfa-dikcizgi {
+  border-left: 3.8px solid var(--primary);
+  height: 2.2em;
+  opacity: .5;
+}
+
+.yardim-anasayfa-icerik {
+  color: #575756;
+  font-size: 10pt;
+}
+
+.yardim-anasayfa-website {
+  color: #575756;
+  text-align: center;
+  letter-spacing: .1rem;
+  font-size: 9pt;
+}
+
+.yardim-anasayfa-href a {
+  text-decoration: none;
+}
+
+.yardim-anasayfa-href a:link,
+a:visited {
+  color: #575756;
+}
+
+.yardim-anasayfa-href a:hover {
+  color: var(--primary);
+}
+
+.yardim-anasayfa-img-linkedin {
+  background: url("assets/images/LinkedIn_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-linkedin:hover {
+  background: url("assets/images/Linkedin_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-twitter {
+  background: url("assets/images/Twitter_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-twitter:hover {
+  background: url("assets/images/Twitter_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-facebook {
+  background: url("assets/images/Facebook_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-facebook:hover {
+  background: url("assets/images/Facebook_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-skype {
+  background: url("assets/images/Skype_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-skype:hover {
+  background: url("assets/images/Skype_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-mail {
+  background: url("assets/images/Mail_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-mail:hover {
+  background: url("assets/images/Mail_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-whatsapp {
+  background: url("assets/images/WhatsApp_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-whatsapp:hover {
+  background: url("assets/images/WhatsApp_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-adres {
+  background: url("assets/images/Adres_Normal.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-anasayfa-img-adres:hover {
+  background: url("assets/images/Adres_Hover.svg") no-repeat;
+  background-size: cover;
+}
+
+.yardim-ek-secenekler-baslik {
+  margin: 1em 0 0 3em;
+}
+
+.yardim-ek-secenekler-aciklama {
+  margin: 0 0 1em 3em;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+  opacity: 0.4;
+}

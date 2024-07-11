@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Edge Launch",
+      "type": "edge",
+      "request": "launch",
+      "url": "http://localhost:3600",
+      "webRoot": "${workspaceRoot}/src",
+      "sourceMaps": true
+    },
+    {
+      "name": "Firefox Launch",
+      "type": "firefox",
+      "request": "launch",
+      "url": "http://localhost:3600",
+      "webRoot": "${workspaceRoot}/src"
+    },
+    {
+      "name": "Chrome Launch",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3600",
+      "runtimeArgs": [
+        "--disable-web-security",
+        "--user-data-dir",
+        "--remote-debugging-port=9222"
+      ],
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/src"
+    },
+    {
+      "name": "Chrome Attach",
+      "type": "chrome",
+      "request": "attach",
+      "url": "http://localhost:3600",
+      "port": 9222,
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}/src"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "Menuler": {
+    "ara": "Search",
+    "ozet": "Dashboard",
+    "raporlar": "Reports",
+    "logbook": "Logbook",
+    "logbookinceleme": "Logbook İnceleme",
+    "sistemozet": "System Summary",
+    "sistemraporlari": "System Reports",
+    "sistemtanimlari": "Sistem Tanımları",
+    "kullanicitanimlari": "Kullanıcı Tanımları",
+    "secenekler": "Preferences",
+    "yenilikler": "Yenilikler",
+    "yardim": "Yardım",
+    "yardimmenuler": "Yardım - Menüler",
+    "yardimnasilyaparim": "Yardım - Nasıl Yaparım",
+    "yardimsorucevap": "Yardım - Sık Sorulan Sorular",
+    "bildirimler": "Notifications",
+    "cikis": "Logout"
+  },
+  "Login": {
+    "Sifre": "Password",
+    "SifremiUnuttum": "Forgot Password",
+    "Giris": "Login",
+    "KullaniciKoduEmail": "User code or e-mail address"
+  },
+  "Temalar": {
+    "Deniz": "Sea",
+    "Çöl": "Desert",
+    "Çiçek": "Flower",
+    "Tarla": "Field",
+    "Ateş": "Fire",
+    "Koyu": "Dark"
+  },
+  "Ozet": {
+    "Favorilerim": "Favorites",
+    "Ozet": "Summary"
+  },
+  "Bildirimler": {
+    "Hazirlananlar": "Hazırlananlar",
+    "Bekleyenler": "Bekleyenler"
+  },
+  "SistemOzet": {
+    "Genel": "General",
+    "Sistem": "System",
+    "KulaniciHangiMenude": "Kullanıcı Hangi Menüde",
+    "Kullanicilar": "Kullanıcılar",
+    "Prosesler": "Processes",
+    "KullanimdakiKayitlar": "Kullanımdaki Kayıtlar",
+    "KilitliKayitlar": "Locked Records",
+    "WebOturumlari": "Web Sessions"
+  },
+  "Yenilikler": {
+    "Versiyon": "Version",
+    "OkunmaDurumu": " Okunma Durumu"
+  },
+  "MasrafIslemleri": {
+    "OdemeDurumu": "Ödeme Durumu",
+    "Odendi": "Ödendi",
+    "MasrafDetaylari": {
+      "FaturaEdilebilir": "Fatura Edilebilir",
+      "TurAltTur": "Tür / Alt Tür",
+      "FisNo": "Fiş No",
+      "MasrafNedeni": "Masraf Nedeni",
+      "Turu": "Turü"
+    }
+  },
+  "Genel": {
+    "Ekle": "Ekle",
+    "Yil": "Yıl",
+    "OnayDurumu": "Onay Durumu",
+    "KayitSayisi": "Kayıt Sayısı",
+    "Tarih": "Date",
+    "Aciklama": "Description",
+    "Tutar": "Tutar",
+    "Not": "Note",
+    "SiraNo": "Sıra No",
+    "KayitBulunamadi": "Kayıt Bulunamadı"
+  },
+  "primeng": {
+    "startsWith": "Starts with",
+    "contains": "Contains",
+    "notContains": "Not contains",
+    "endsWith": "Ends with",
+    "equals": "Equals",
+    "notEquals": "Not equals",
+    "noFilter": "No Filter",
+    "lt": "Less than",
+    "lte": "Less than or equal to",
+    "gt": "Greater than",
+    "gte": "Greater than or equal to",
+    "is": "Is",
+    "isNot": "Is not",
+    "before": "Before",
+    "after": "After",
+    "dateIs": "Date is",
+    "dateIsNot": "Date is not",
+    "dateBefore": "Date is before",
+    "dateAfter": "Date is after",
+    "clear": "Clear",
+    "apply": "Apply",
+    "matchAll": "Match All",
+    "matchAny": "Match Any",
+    "addRule": "Add Rule",
+    "removeRule": "Remove Rule",
+    "accept": "Yes",
+    "reject": "No",
+    "choose": "Choose",
+    "upload": "Upload",
+    "cancel": "Cancel",
+    "dayNames": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "dayNamesShort": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "dayNamesMin": [
+      "Su",
+      "Mo",
+      "Tu",
+      "We",
+      "Th",
+      "Fr",
+      "Sa"
+    ],
+    "monthNames": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "monthNamesShort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "dateFormat": "mm/dd/yy",
+    "firstDayOfWeek": 0,
+    "today": "Today",
+    "weekHeader": "Wk",
+    "weak": "Weak",
+    "medium": "Medium",
+    "strong": "Strong",
+    "passwordPrompt": "Enter a password",
+    "emptyMessage": "No results found",
+    "emptyFilterMessage": "No results found"
+  }
+}

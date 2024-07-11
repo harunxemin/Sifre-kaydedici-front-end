@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  limitbilgisayar.com.tr
+
+# THANKS
+
+  <name>
+  M. Adnan Zerdeci
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, Primeng, Bootstrap
+  Angular, TypeScript

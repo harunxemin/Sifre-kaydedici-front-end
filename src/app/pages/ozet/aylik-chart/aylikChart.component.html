@@ -1,0 +1,11 @@
+<sol-buyuk-kart baslik="{{kriter()}} Dağılımı" [baslikRenk]="baslikRenk">
+  <div class="m-3">
+    <p-chart type="bar" [data]="chartData" height="260px" [options]="chartOptions"
+      (onDataSelect)="selectData($event)" />
+  </div>
+
+  <ng-template #sagUst>
+    <p-dropdown [options]="kriterler" [(ngModel)]="seciliKriter" [style]="{'float':'right'}"
+      (onChange)="kriterChange()" />
+  </ng-template>
+</sol-buyuk-kart>

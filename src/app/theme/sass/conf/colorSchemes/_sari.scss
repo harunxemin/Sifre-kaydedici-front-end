@@ -1,0 +1,32 @@
+/*!sari.scss*/
+
+$body-bg: #F0F3F4;
+
+$default-text: #ffffff;
+
+$sidebar: rgba(#000000, .5);
+$sidebar-text: #ffffff;
+
+$primary: var(--primary) !default;
+$danger: #e85656 !default;
+
+$primary-dark: shade(#f0ad4e, 15%);
+
+$activelink: $primary;
+$hoverlink: $primary-dark;
+
+@mixin body-bg() {
+  background-color: $body-bg;
+
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    will-change: transform;
+    z-index: 0;
+  }
+}
