@@ -1,7 +1,7 @@
 import { LimitMenu } from 'limitng/api/models/ortak';
 
 export class User {
-  kullaniciKodu = '';
+  kullaniciId = 0;
   kullaniciAdiSoyadi = '';
   kullaniciAdi = '';
   kullaniciSoyadi = '';
@@ -22,3 +22,9 @@ export class Secenekler {
   sifreOrijinal = '';
 }
 
+export interface ILoginSonuc {
+  islemBasarili: boolean;
+  kullaniciId: number;
+  mesaj: string;
+  token: string;
+}

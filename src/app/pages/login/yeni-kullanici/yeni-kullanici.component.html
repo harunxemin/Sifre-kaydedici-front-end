@@ -1,0 +1,42 @@
+<div class="login-body">
+  <div class="card login-panel login-image" [style.background-image]="'url('+bgLoginImageVariable+')'">
+    <div class="login-panel-content p-fluid">
+      <login-ust />
+
+      <div class="grid">
+        <div class="col-12"> Yeni Kullanıcı </div>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid p-3">
+          <div class="col-12 text-left">
+            <label for="inputEmail" class="login-label">e-Posta Adresi</label>
+            <div class="login-input">
+              <input pInputText type="text" [(formControl)]="ePostaAdresi" id="inputEmail" placeholder="e-Posta Adresi"
+                inputmode="email" (keypress)="dismissAlert()">
+            </div>
+          </div>
+          <div class="col-12 text-left">
+            <label for="inputSifre" class="login-label">Şifre</label>
+            <div class="login-input">
+              <p-password [(formControl)]="sifre" id="inputSifre" toggleMask (keypress)="dismissAlert()"
+                placeholder="Şifre" />
+            </div>
+          </div>
+          <div class="col-12 text-left">
+            <label for="inputSifreTekrar" class="login-label">Şifre Tekrar</label>
+            <div class="login-input">
+              <p-password [(formControl)]="sifreTekrar" id="inputSifreTekrar" toggleMask (keypress)="dismissAlert()"
+                placeholder="Tekrar" />
+            </div>
+          </div>
+
+          <div class="col-12 button-pane">
+            <p-button severity="info" [disabled]="!form.valid" type="submit" label="Oluştur" />
+          </div>
+        </div>
+      </form>
+      <p-messages [(value)]="error" closable="false" />
+    </div>
+  </div>
+</div>

@@ -28,7 +28,7 @@ export class SifreDegistirComponent implements OnInit {
   secenekler = new SifreSecenekleri();
   bgLoginImageVariable = GlobalVars.getLoginBackgroundImageURL; //  + '&TemaNo=' + GlobalFunctions.temaGunNoVer().toString();
 
-  private kullaniciKodu = '';
+  private ePostaAdresi = '';
   private token = '';
 
   constructor(
@@ -53,9 +53,9 @@ export class SifreDegistirComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.kullaniciKodu = this.route.snapshot.paramMap.get('kullaniciKodu');
+    this.ePostaAdresi = this.route.snapshot.paramMap.get('ePostaAdresi');
     this.token = this.route.snapshot.paramMap.get('token');
-    this.authenticationService.sifreDegistirSecenekler(this.kullaniciKodu, this.token)
+    this.authenticationService.sifreDegistirSecenekler(this.ePostaAdresi, this.token)
       .subscribe({
         next: (sonuc) => {
           this.secenekler = sonuc;
@@ -74,7 +74,7 @@ export class SifreDegistirComponent implements OnInit {
   sifreDegistirCall(): void {
     if (this.form.valid) {
       if (this.sifreKontrol()) {
-        this.sifreDegistir(this.kullaniciKodu, this.sifre.value);
+        this.sifreDegistir(this.ePostaAdresi, this.sifre.value);
       }
     }
   }
@@ -139,8 +139,8 @@ export class SifreDegistirComponent implements OnInit {
     return sonuc;
   }
 
-  private sifreDegistir(kullaniciKodu: string, sifre: string) {
-    this.authenticationService.sifreDegistir(kullaniciKodu, sifre, this.token)
+  private sifreDegistir(ePostaAdresi: string, sifre: string) {
+    this.authenticationService.sifreDegistir(ePostaAdresi, sifre, this.token)
       .subscribe({
         next: (sifreDegistirSonuc) => {
           if (sifreDegistirSonuc.kayitBasarili) {

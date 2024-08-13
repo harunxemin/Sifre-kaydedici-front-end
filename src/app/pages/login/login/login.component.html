@@ -8,7 +8,7 @@
           <div class="col-12 text-left">
             <label for="inputEmail" class="login-label">e-Posta Adresi</label>
             <div class="login-input">
-              <input #inputEmail pInputText type="text" [formControl]="kullaniciKodu" id="inputEmail"
+              <input #inputEmail pInputText type="text" [formControl]="ePostaAdresi" id="inputEmail"
                 placeholder="e-Posta Adresi" inputmode="email" (keypress)="dismissAlert()">
             </div>
           </div>
@@ -28,6 +28,10 @@
 
           <div class="col-6 link-pane">
             <a [routerLink]="['/login', 'sifremi-unuttum']">Şifremi Unuttum</a>
+          </div>
+
+          <div class="col-12 link-pane">
+            <a [routerLink]="['/login', 'yeni-kullanici']">Yeni Kullanıcı</a>
           </div>
         </div>
       </form>

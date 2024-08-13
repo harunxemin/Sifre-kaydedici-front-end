@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: 'login', loadChildren: () => import('./login/login.module') },
   { path: 'logout', loadChildren: () => import('./login/login.module') },
   { path: 'sifremi-unuttum', loadChildren: () => import('./login/login.module') },
+  { path: 'yeni-kullanici', loadChildren: () => import('./login/login.module') },
   { path: 'sifre-degistir', loadChildren: () => import('./login/login.module') },
   {
     path: 'pages',

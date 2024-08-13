@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SifreDegistirComponent } from './sifre-degistir/sifre-degistir.component';
 import { SifremiUnuttumComponent } from './sifremi-unuttum/sifremi-unuttum.component';
+import { YeniKullaniciComponent } from './yeni-kullanici/yeni-kullanici.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { SifremiUnuttumComponent } from './sifremi-unuttum/sifremi-unuttum.compo
     RouterModule.forChild([
       { path: 'sifre-degistir', component: SifreDegistirComponent },
       { path: 'sifremi-unuttum', component: SifremiUnuttumComponent },
+      { path: 'yeni-kullanici', component: YeniKullaniciComponent },
       { path: 'login', component: LoginComponent },
       { path: 'logout', component: LogoutComponent }
 
@@ -29,7 +31,8 @@ import { SifremiUnuttumComponent } from './sifremi-unuttum/sifremi-unuttum.compo
     LoginUstComponent,
     LogoutComponent,
     SifreDegistirComponent,
-    SifremiUnuttumComponent
+    SifremiUnuttumComponent,
+    YeniKullaniciComponent
   ]
 })
 

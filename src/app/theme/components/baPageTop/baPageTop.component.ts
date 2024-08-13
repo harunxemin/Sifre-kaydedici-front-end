@@ -92,7 +92,7 @@ export class BaPageTopComponent implements OnInit {
     this.userService.getNotificationGorulmeyenAdet(this.currentUser)
       .subscribe({
         next: (bildirimler) => {
-          this.bildirimGorulmeyenAdet = bildirimler.GorulmeyenAdet;
+          this.bildirimGorulmeyenAdet = bildirimler.gorulmeyenAdet;
         },
         error: (error: HttpErrorResponse) => {
           if (error.status === 401) {

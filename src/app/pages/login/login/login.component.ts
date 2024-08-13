@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   ajansLogolar: IAjansLogo[] = [];
   numofPage = 0;
   form: FormGroup;
-  kullaniciKodu: FormControl;
+  ePostaAdresi: FormControl;
   sifre: FormControl;
   error: Message[] = [];
   bgLoginImageVariable = GlobalVars.getLoginBackgroundImageURL; // + '&TemaNo=' + GlobalFunctions.temaGunNoVer().toString();
@@ -56,13 +56,13 @@ export class LoginComponent implements OnInit {
   ) {
     this.titleService.setTitle(GlobalVars.programAdi + ' - Sisteme Giriş');
     this.form = formBuilder.group({
-      kullaniciKodu: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      ePostaAdresi: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       sifre: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
 
-    this.kullaniciKodu = <FormControl>this.form.controls['kullaniciKodu'];
-    if (this.route.snapshot.paramMap.get('kullaniciKodu') !== '') {
-      this.kullaniciKodu.setValue(this.route.snapshot.paramMap.get('kullaniciKodu'));
+    this.ePostaAdresi = <FormControl>this.form.controls['ePostaAdresi'];
+    if (this.route.snapshot.paramMap.get('ePostaAdresi') !== '') {
+      this.ePostaAdresi.setValue(this.route.snapshot.paramMap.get('ePostaAdresi'));
     }
     this.sifre = <FormControl>this.form.controls['sifre'];
   }
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     delete this.userService.setCurrentUser;
 
-    if (this.kullaniciKodu.value === null) {
+    if (this.ePostaAdresi.value === null) {
       setTimeout(() => {
         this.inputEmail().nativeElement.focus();
       }, 0);
@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     if (this.form.valid) {
-      this.login(this.kullaniciKodu.value, this.sifre.value);
+      this.login(this.ePostaAdresi.value, this.sifre.value);
     }
   }
 
@@ -93,7 +93,7 @@ export class LoginComponent implements OnInit {
     this.error = [];
   }
 
-  private login(kullaniciKodu: string, sifre: string) {
+  private login(ePostaAdresi: string, sifre: string) {
     this.spinnerService.start();
     this.dismissAlert();
     const deviceInfo: DeviceInfo = this.deviceService.getDeviceInfo();
@@ -101,11 +101,11 @@ export class LoginComponent implements OnInit {
     const isTablet = this.deviceService.isTablet();
     const isDesktop = this.deviceService.isDesktop();
 
-    this.authenticationService.login(kullaniciKodu, sifre, deviceInfo, isMobile, isTablet, isDesktop)
+    this.authenticationService.login(ePostaAdresi, sifre, deviceInfo, isMobile, isTablet, isDesktop)
       .subscribe({
         next: (loginSonuc) => {
           if (loginSonuc.islemBasarili) {
-            this.userService.getUserDetails(loginSonuc.kullaniciKodu, loginSonuc.token)
+            this.userService.getUserDetails(loginSonuc.kullaniciId, loginSonuc.token)
               .subscribe({
                 next: (userDetails) => {
                   this.userService.setCurrentUser(userDetails);

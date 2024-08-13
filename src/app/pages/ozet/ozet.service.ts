@@ -23,7 +23,7 @@ export class OzetService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -36,7 +36,7 @@ export class OzetService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -49,7 +49,7 @@ export class OzetService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -59,7 +59,7 @@ export class OzetService {
   getFavoriler(currentUser: User): Observable<Favoriler> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -75,7 +75,7 @@ export class OzetService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -87,7 +87,7 @@ export class OzetService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      ePostaAdresi: encodeURI(currentUser.ePostaAdresi),
       Authorization: 'Bearer ' + currentUser.token
     });
 

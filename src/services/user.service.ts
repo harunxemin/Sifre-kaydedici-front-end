@@ -25,7 +25,7 @@ export class UserService {
   getUserMenus(currentUser: User): Observable<User> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -35,76 +35,31 @@ export class UserService {
   getUserMenuExtras(currentUser: User): Observable<ExtraRoutes> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 
     return this.httpClient.get<ExtraRoutes>(GlobalVars.getUserMenuExtrasURL, { headers });
   }
 
-  getUserDetails(kullaniciKodu: string, token: string): Observable<User> {
+  getUserDetails(kullaniciId: number, token: string): Observable<User> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(kullaniciKodu),
+      kullaniciId: kullaniciId,
       Authorization: 'Bearer ' + token
     });
 
     return this.httpClient.get<User>(GlobalVars.getUserDetailsURL, { headers });
   }
 
-  getNotifications(currentUser: User): Observable<Bildirimler> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
-      Authorization: 'Bearer ' + currentUser.token
-    });
-
-    return this.httpClient.get<Bildirimler>(GlobalVars.bildirimListeURL, { headers });
-  }
-
   getNotificationGorulmeyenAdet(currentUser: User): Observable<Bildirimler> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 
     return this.httpClient.get<Bildirimler>(GlobalVars.bildirimGorulmeyenAdetURL, { headers });
-  }
-
-  notificationDetaylari(currentUser: User, raporID: number): Observable<RaporDetaylari> {
-    const params = new HttpParams()
-      .set('raporID', raporID.toString());
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
-      Authorization: 'Bearer ' + currentUser.token
-    });
-
-    return this.httpClient.get<RaporDetaylari>(GlobalVars.raporDetayURL, { headers, params });
-  }
-
-  raporSil(currentUser: User, raporID: number): Observable<ISilmeIslemiSonuc> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
-      Authorization: 'Bearer ' + currentUser.token
-    });
-
-    return this.httpClient.delete<ISilmeIslemiSonuc>(GlobalVars.raporSilURL + '/' + raporID.toString(), { headers });
-  }
-
-  raporGonder(currentUser: User, raporID: number): Observable<IKayitIslemiSonuc> {
-    const body = JSON.stringify({ raporID });
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
-      Authorization: 'Bearer ' + currentUser.token
-    });
-
-    return this.httpClient.post<IKayitIslemiSonuc>(GlobalVars.raporGonderURL, body, { headers });
   }
 
   secenekKaydet(currentUser: User): Observable<IKayitIslemiSonuc> {
@@ -112,7 +67,7 @@ export class UserService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 
@@ -124,7 +79,7 @@ export class UserService {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 

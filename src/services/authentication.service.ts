@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { ILoginSonuc, SifreSecenekleri } from 'limitng/api/models/login';
+import { SifreSecenekleri } from 'limitng/api/models/login';
 import { IKayitIslemiSonuc } from 'limitng/api/models/ortak';
 import { DeviceInfo } from 'ngx-device-detector';
 import { Observable } from 'rxjs';
 
 import { GlobalVars } from 'app/globalVars';
-import { User } from 'models/user';
+import { ILoginSonuc, User } from 'models/user';
 
 @Injectable({ providedIn: 'root' })
 
@@ -16,8 +16,8 @@ export class AuthenticationService {
     private httpClient: HttpClient
   ) { }
 
-  login(kullaniciKodu: string, sifre: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<ILoginSonuc> {
-    const body = JSON.stringify({ kullaniciKodu, sifre, deviceInfo, isMobile, isTablet, isDesktop });
+  login(ePostaAdresi: string, sifre: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<ILoginSonuc> {
+    const body = JSON.stringify({ ePostaAdresi, sifre, deviceInfo, isMobile, isTablet, isDesktop });
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -27,20 +27,20 @@ export class AuthenticationService {
     return this.httpClient.post<ILoginSonuc>(GlobalVars.checkLoginURL, body, { headers });
   }
 
-  sifreDegistir(kullaniciKodu: string, sifre: string, token: string): Observable<IKayitIslemiSonuc> {
+  sifreDegistir(ePostaAdresi: string, sifre: string, token: string): Observable<IKayitIslemiSonuc> {
     const body = JSON.stringify({ sifre });
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(kullaniciKodu),
+      ePostaAdresi: encodeURI(ePostaAdresi),
       Authorization: token
     });
 
     return this.httpClient.post<IKayitIslemiSonuc>(GlobalVars.sifreDegistirURL, body, { headers });
   }
 
-  sifremiUnuttum(kullaniciKodu: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<IKayitIslemiSonuc> {
-    const body = JSON.stringify({ kullaniciKodu, deviceInfo, isMobile, isTablet, isDesktop });
+  sifremiUnuttum(ePostaAdresi: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<IKayitIslemiSonuc> {
+    const body = JSON.stringify({ ePostaAdresi, deviceInfo, isMobile, isTablet, isDesktop });
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -50,10 +50,22 @@ export class AuthenticationService {
     return this.httpClient.post<IKayitIslemiSonuc>(GlobalVars.sifremiUnuttumURL, body, { headers });
   }
 
-  sifreDegistirSecenekler(kullaniciKodu: string, token: string): Observable<SifreSecenekleri> {
+
+  yeniKullanici(ePostaAdresi: string, sifre: string): Observable<IKayitIslemiSonuc> {
+    const body = JSON.stringify({ ePostaAdresi, sifre });
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(kullaniciKodu),
+      Authorization: 'Bearer 1837837'
+    });
+
+    return this.httpClient.post<IKayitIslemiSonuc>(GlobalVars.yeniKullaniciURL, body, { headers });
+  }
+
+  sifreDegistirSecenekler(ePostaAdresi: string, token: string): Observable<SifreSecenekleri> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      ePostaAdresi: encodeURI(ePostaAdresi),
       Authorization: 'Bearer ' + token
     });
 
@@ -63,16 +75,16 @@ export class AuthenticationService {
   logout(currentUser: User): Observable<IKayitIslemiSonuc> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      kullaniciKodu: encodeURI(currentUser.kullaniciKodu),
+      kullaniciId: currentUser.kullaniciId,
       Authorization: 'Bearer ' + currentUser.token
     });
 
-    console.info('logout: ' + GlobalVars.logoutURL + ': ' + currentUser.kullaniciKodu);
+    console.info('logout: ' + GlobalVars.logoutURL + ': ' + currentUser.kullaniciId);
     return this.httpClient.post<IKayitIslemiSonuc>(GlobalVars.logoutURL, '', { headers });
   }
 
-  checkToken(kullaniciKodu: string, token: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<ILoginSonuc> {
-    const body = JSON.stringify({ kullaniciKodu, token, deviceInfo, isMobile, isTablet, isDesktop });
+  checkToken(kullaniciId: number, token: string, deviceInfo: DeviceInfo, isMobile: boolean, isTablet: boolean, isDesktop: boolean): Observable<ILoginSonuc> {
+    const body = JSON.stringify({ kullaniciId, token, deviceInfo, isMobile, isTablet, isDesktop });
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
